@@ -111,7 +111,7 @@ print(fib(10))
 
 # Method 2: Recursive Factorial
 def fac(x): return 1 if x<=1 else x * fac(x-1)
-print(fac(10))
+print(fac(4))
 # 3628800
 
 
@@ -125,4 +125,29 @@ print(fac(10))
 unsorted = [33, 2, 3, 45, 6, 54, 33]
 q = lambda l: q([x for x in l[1:] if x <= l[0]]) + [l[0]] + q([x for x in l if x > l[0]]) if l else []
 print(q(unsorted))
-# [2, 3, 6, 33, 33, 45, 54]
+
+# Method 1: findall()
+import re; print(re.findall('F.*r', 'Learn Python with Finxter'))
+# ['Finxter']
+
+#python -c "print(open('file.txt').read().replace('example','replaced_example'))"
+
+iter1 = [1, 2, 3, 4]
+iter2 = ['a', 'b', 'c']
+
+for i in iter1:
+    for j in iter2:
+        print(i, j)
+
+print("--------------------")
+# Method 1: Nested List Comprehension
+[print(i,j) for i in iter1 for j in iter2]
+print("--------------------")
+# Method 2: exec()
+exec("for x in iter1:\n    for y in iter2:\n        print(x, y)")
+print("--------------------")
+# Method 3: For Loop with List Comprehension
+for i in iter1: [print(i, j) for j in iter2]
+
+#
+a = 1; b = 2; c = a + b; print(c)
